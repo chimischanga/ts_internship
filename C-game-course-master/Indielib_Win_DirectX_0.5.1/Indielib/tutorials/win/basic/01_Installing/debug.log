@@ -1,0 +1,136 @@
+
+                         ''~``                          
+                        ( o o )                         
++------------------.oooO--(_)--Oooo.------------------+ 
+|                                                     | 
+|                .-------------------.                | 
+|                | I N D I E  L I B  |                | 
+|                .-------------------.                | 
+|                    .oooO                            | 
+|                    (   )   Oooo.                    | 
++---------------------\ (----(   )--------------------+
+                       \_)    ) /                      
+                             (_/                        
+Indielib version: 0.5.0
+
+[Init time]: (Sunday, 5 of May 2013)
+
+[13:17:36] [ BEGIN ] -- Creating Render --
+                     {
+           [ INFO  ]    Requested Window Height: 600
+           [ INFO  ]    Requested Window Width:  800
+           [ INFO  ]    Requested Window Bpp:  32
+           [ INFO  ]    Requested Window FullScreen:  0
+           [ INFO  ]    Requested Window Double buffer:  1
+           [  OK   ]    Initiating OpenGL SDL Context Parameters
+           [  OK   ]    OpenGL Context Parameters Initated
+[13:17:36] [ BEGIN ]    -- Creating SDL window --
+                        {
+           [  OK   ]       Window created
+           [ INFO  ]       Mode: Window
+                        }
+[13:17:37] [  END  ]    Window OK [Elapsed time = 0.528 seg]
+[13:17:37] [ BEGIN ]    -- Creating OpenGL Render --
+                        {
+           [  OK   ]       Creating OpenGL context
+           [  OK   ]       OpenGL context created
+           [  OK   ]       Checking created OpenGL context pixel format
+           [ INFO  ]       Created GL context R size:  8
+           [ INFO  ]       Created GL context G size:  8
+           [ INFO  ]       Created GL context B size:  8
+           [ INFO  ]       Created GL context A size:  8
+           [ INFO  ]       Created GL context Depth size:  24
+           [ INFO  ]       Created GL context Stencil size:  8
+           [WARNING]       Different GL context pixel format used
+[13:17:37] [ BEGIN ]       -- Hardware information --
+                           {
+           [ INFO  ]          OpenGL version: GL_VERSION_1_5
+           [ INFO  ]          Mark: NO DATA
+           [ INFO  ]          Chip: NO DATA
+           [ INFO  ]          Primitive antialising: No
+           [ INFO  ]          Maximum texture size: 16384 x 16384
+           [ INFO  ]          Texture units: 4                           }
+[13:17:37] [  END  ]       Hardware Ok [Elapsed time = 0 seg]
+                        }
+[13:17:37] [  END  ]    OpenGL Render Created [Elapsed time = 0.018 seg]
+[13:17:37] [ BEGIN ]    -- Initializing ImageManager --
+                        {
+           [  OK   ]       Preparing ImageManager
+           [ INFO  ]       Using FreeImage version:  3.15.3
+           [ INFO  ]       Copyright:  This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+                        }
+[13:17:37] [  END  ]    ImageManager Initialised [Elapsed time = 0.001 seg]
+[13:17:37] [ BEGIN ]    -- Initializing SurfaceManager --
+                        {
+           [  OK   ]       Checking IND_Render
+           [  OK   ]       Checking IND_ImageManager
+                        }
+[13:17:37] [  END  ]    SurfaceManager OK [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Initializing AnimationManager --
+                        {
+           [  OK   ]       SurfaceManager Ok
+           [  OK   ]       ImageManager Ok
+                        }
+[13:17:37] [  END  ]    AnimationManager OK [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Initializing FontManager --
+                        {
+           [  OK   ]       SurfaceManager Ok
+           [  OK   ]       ImageManager Ok
+                        }
+[13:17:37] [  END  ]    FontManager OK [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Initializing Entity2dManager --
+                        {
+           [  OK   ]       Preparing Entity2dManager
+           [  OK   ]        Checking IND_Render
+                        }
+[13:17:37] [  END  ]    Entity2dManager OK [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Finalizing Entity2dManager --
+                        {
+[13:17:37] [ BEGIN ]       -- Freeing 2d entities --
+                           {
+                           }
+[13:17:37] [  END  ]       Entities freed [Elapsed time = 0 seg]
+                        }
+[13:17:37] [  END  ]    IND_Entity2dManager finalized [Elapsed time = 0.001 seg]
+[13:17:37] [ BEGIN ]    -- Finalizing FontManager --
+                        {
+[13:17:37] [ BEGIN ]       -- Freeing fonts --
+                           {
+                           }
+[13:17:37] [  END  ]       Fonts freed [Elapsed time = 0 seg]
+                        }
+[13:17:37] [  END  ]    FontManager finalized [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Finalizing AnimationManager --
+                        {
+[13:17:37] [ BEGIN ]       -- Freeing animations --
+                           {
+                           }
+[13:17:37] [  END  ]       Animations freed [Elapsed time = 0 seg]
+                        }
+[13:17:37] [  END  ]    AnimationManager finalized [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Finalizing SurfaceManager --
+                        {
+[13:17:37] [ BEGIN ]       -- Freeing surfaces --
+                           {
+                           }
+[13:17:37] [  END  ]       Surfaces freed [Elapsed time = 0 seg]
+                        }
+[13:17:37] [  END  ]    IND_SurfaceManager finalized [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Finalizing ImageManager --
+                        {
+[13:17:37] [ BEGIN ]       -- Freeing images --
+                           {
+                           }
+[13:17:37] [  END  ]       Images freed [Elapsed time = 0 seg]
+                        }
+[13:17:37] [  END  ]    ImageManager finalized [Elapsed time = 0 seg]
+[13:17:37] [ BEGIN ]    -- Finalizing OpenGL --
+                        {
+           [  OK   ]       Destroying OpenGL Context
+           [  OK   ]       OpenGL Context Destroyed
+[13:17:37] [ BEGIN ]       -- Finalizing the window --
+                           {
+                           }
+[13:17:37] [  END  ]       Window finalized [Elapsed time = 0.003 seg]
+                        }
+[13:17:37] [  END  ]    OpenGL finalized  [Elapsed time = 0.004 seg]
