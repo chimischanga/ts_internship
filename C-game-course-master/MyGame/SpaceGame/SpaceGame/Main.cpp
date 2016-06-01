@@ -25,21 +25,28 @@ int IndieLib()
 
 	// Loading Background
 	IND_Surface *mSurfaceBack = IND_Surface::newSurface();
-	if (!mI->_surfaceManager->add(mSurfaceBack, "../SpaceGame/resources/blue_background.jpg", IND_OPAQUE, IND_32)) return 0;
+	if (!mI->_surfaceManager->add(mSurfaceBack, "../SpaceGame/resources/background3.jpg", IND_OPAQUE, IND_32)) return 0;
 
-	// Loading sprite of a star
-	IND_Surface *mSurfaceStar = IND_Surface::newSurface();
-	if (!mI->_surfaceManager->add(mSurfaceStar, "../SpaceGame/resources/star.png", IND_ALPHA, IND_32)) return 0;
+	// Loading healthbars
+	IND_Surface *mSurfaceHBR1 = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(mSurfaceHBR1, "../SpaceGame/resources/hbr1.png", IND_ALPHA, IND_32)) return 0;
+	IND_Surface *mSurfaceHBR2 = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(mSurfaceHBR2, "../SpaceGame/resources/hbr2.png", IND_ALPHA, IND_32)) return 0;
+	IND_Surface *mSurfaceHBB1 = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(mSurfaceHBB1, "../SpaceGame/resources/hbb1.png", IND_ALPHA, IND_32)) return 0;
+	IND_Surface *mSurfaceHBB2 = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(mSurfaceHBB2, "../SpaceGame/resources/hbb2.png", IND_ALPHA, IND_32)) return 0;
+
 
 	// ----- Animations loading -----
 
-	// Characters animations, we apply a color key of (0, 48, 152)
+	// Characters animations, we apply a color key of (30, 59, 121)
 	IND_Animation *mAnimationCharacter1 = IND_Animation::newAnimation();
-	if (!mI->_animationManager->addToSurface(mAnimationCharacter1, "../SpaceGame/resources/animations/character1.xml", IND_ALPHA, IND_32, 0, 48, 152)) return 0;
+	if (!mI->_animationManager->addToSurface(mAnimationCharacter1, "../SpaceGame/resources/animations/character1.xml", IND_ALPHA, IND_32, 30, 59, 121)) return 0;
 
-	// Characters animations, we apply a color key of (0, 48, 152)
+	// Characters animations, we apply a color key of (38, 62, 114)
 	IND_Animation *mAnimationCharacter2 = IND_Animation::newAnimation();
-	if (!mI->_animationManager->addToSurface(mAnimationCharacter2, "../SpaceGame/resources/animations/character2.xml", IND_ALPHA, IND_32, 0, 48, 152)) return 0;
+	if (!mI->_animationManager->addToSurface(mAnimationCharacter2, "../SpaceGame/resources/animations/character2.xml", IND_ALPHA, IND_32, 38, 62, 114)) return 0;
 
 	// Dust animation, we apply a color key of (255, 0, 255)
 	IND_Animation *mAnimationDust = IND_Animation::newAnimation();
@@ -52,10 +59,21 @@ int IndieLib()
 	mI->_entity2dManager->add(mBack);					// Entity adding
 	mBack->setSurface(mSurfaceBack);					// Set the surface into the entity
 
-	//star
-	IND_Entity2d *star = IND_Entity2d::newEntity2d();
-	mI->_entity2dManager->add(star);
-	star->setSurface(mSurfaceStar);
+	IND_Entity2d *hbr1 = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(hbr1);
+	hbr1->setSurface(mSurfaceHBR1);
+
+	IND_Entity2d *hbr2 = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(hbr2);
+	hbr2->setSurface(mSurfaceHBR2);
+
+	IND_Entity2d *hbb1 = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(hbb1);
+	hbb1->setSurface(mSurfaceHBB1);
+
+	IND_Entity2d *hbb2 = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(hbb2);
+	hbb2->setSurface(mSurfaceHBB2);
 
 	// Character 1
 	IND_Entity2d *mPlayer1 = IND_Entity2d::newEntity2d();
@@ -68,28 +86,30 @@ int IndieLib()
 	mPlayer2->setAnimation(mAnimationCharacter2);				// Set the animation into the entity
 
 	// Dust explosion
-	IND_Entity2d *mDust = IND_Entity2d::newEntity2d();
-	mI->_entity2dManager->add(mDust);					// Entity adding
-	mDust->setAnimation(mAnimationDust);					// Set the animation into the entity
+	//IND_Entity2d *mDust = IND_Entity2d::newEntity2d();
+	//mI->_entity2dManager->add(mDust);					// Entity adding
+	//mDust->setAnimation(mAnimationDust);					// Set the animation into the entity
 
 	// ----- Changing the attributes of the 2d entities -----
 
 	// Player 1
 	mPlayer1->setSequence(0);						// Choose sequence
-	mPlayer1->setPosition(140, 200, 0);
+	mPlayer1->setPosition(140, 380, 0);
 	mPlayer1->setMirrorX(1);						// Horizontal mirroring
 
 	// Dust explosion
-	mDust->setPosition(360, 250, 0);
+	//mDust->setPosition(360, 250, 0);
 
 	// Player 2
 	mPlayer2->setSequence(0);						// Choose sequence
-	mPlayer2->setPosition(550, 200, 0);
-	mPlayer2->setNumReplays(3);						// The animation will be displayed 3 times
+	mPlayer2->setPosition(550, 380, 0);
+	//mPlayer2->setNumReplays(3);						// The animation will be displayed 3 times
 
+	hbr1->setPosition(195, 0, 100);
+	hbr2->setPosition(272, 0, 100);
+	hbb1->setPosition(537, 0, 100);
+	hbb2->setPosition(429, 0, 100);
 
-	//star
-	star->setPosition(mI->_window->getWidth() - mSurfaceStar->getWidth(), 0, 100);
 	// ----- Main Loop -----
 
 	while (!mI->_input->onKeyPress(IND_ESCAPE) && !mI->_input->quit())
