@@ -131,6 +131,10 @@ int IndieLib()
 	float mAngle = 0;
 	float mPosX = 140;
 	float mPosX1 = 530;
+	float mPosY = 380;
+	float mPosY1 = 380;
+	float mPosZ = 1;
+	float mPosZ1 = 1;
 	int mSpeed = 200;
 	float mDelta;
 	char mText[2048];
@@ -153,9 +157,11 @@ int IndieLib()
 		if (mPosX1 + mWidth >= mI->_window->getWidth()-145) mPosX1 = mI->_window->getWidth()-145;
 		if (mPosX1 - mWidth < -30) mPosX1 = -30;
 
+		if (mPosY - mHeight >= mI->_window->getHeight()-150) mPosY = mI->_window->getHeight()-150;
+		if (mPosY - mHeight < 355) mPosY = 355;
 
-		//if (mPosY + mHeight >= mI->_window->getHeight()) mPosY = mI->_window->getHeight();
-		//if (mPosY - mHeight < 0) mPosY = 0;
+		if (mPosY1 - mHeight >= mI->_window->getHeight() - 150) mPosY1 = mI->_window->getHeight() - 150;
+		if (mPosY1 - mHeight < 355) mPosY1 = 355;
 
 		mDelta = mI->_render->getFrameTime() / 1000.0f;
 
@@ -169,6 +175,16 @@ int IndieLib()
 			mPosX -= mSpeed * mDelta;
 		}
 
+		if (mI->_input->isKeyPressed(IND_S))
+		{
+			mPosY += mSpeed * mDelta;
+		}
+
+		if (mI->_input->isKeyPressed(IND_W))
+		{
+			mPosY -= mSpeed * mDelta;
+		}
+
 		if (mI->_input->isKeyPressed(IND_KEYRIGHT))
 		{
 			mPosX1 += mSpeed * mDelta;
@@ -179,8 +195,21 @@ int IndieLib()
 			mPosX1 -= mSpeed * mDelta;
 		}
 
-		mPlayer1->setPosition((float)mPosX, 380, 0);
-		mPlayer2->setPosition((float)mPosX1, 380, 0);
+		if (mI->_input->isKeyPressed(IND_KEYDOWN))
+		{
+			mPosY1 += mSpeed * mDelta;
+		}
+
+		if (mI->_input->isKeyPressed(IND_KEYUP))
+		{
+			mPosY1 -= mSpeed * mDelta;
+		}
+
+		if (mPosY1 < mPosY) mPosZ == mPosZ++;
+		else if (mPosY1 > mPosY) mPosZ1 == mPosZ1++;
+
+		mPlayer1->setPosition((float)mPosX, (float)mPosY, (float)mPosZ);
+		mPlayer2->setPosition((float)mPosX1, (float)mPosY1, (float)mPosZ1);
 
 
 		if (mPosX >= mPosX1)
