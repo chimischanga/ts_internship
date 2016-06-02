@@ -25,7 +25,7 @@ int IndieLib()
 
 	// Loading Background
 	IND_Surface *mSurfaceBack = IND_Surface::newSurface();
-	if (!mI->_surfaceManager->add(mSurfaceBack, "../SpaceGame/resources/background3.jpg", IND_OPAQUE, IND_32)) return 0;
+	if (!mI->_surfaceManager->add(mSurfaceBack, "../SpaceGame/resources/background2.jpg", IND_OPAQUE, IND_32)) return 0;
 
 	// Loading healthbars
 	IND_Surface *mSurfaceHBR1 = IND_Surface::newSurface();
@@ -46,11 +46,11 @@ int IndieLib()
 
 	// Characters animations, we apply a color key of (38, 62, 114)
 	IND_Animation *mAnimationCharacter2 = IND_Animation::newAnimation();
-	if (!mI->_animationManager->addToSurface(mAnimationCharacter2, "../SpaceGame/resources/animations/character2.xml", IND_ALPHA, IND_32, 38, 62, 114)) return 0;
+	if (!mI->_animationManager->addToSurface(mAnimationCharacter2, "../SpaceGame/resources/animations/character3.xml", IND_ALPHA, IND_32, 28, 28, 28)) return 0;
 
 	// Dust animation, we apply a color key of (255, 0, 255)
-	IND_Animation *mAnimationDust = IND_Animation::newAnimation();
-	if (!mI->_animationManager->addToSurface(mAnimationDust, "../SpaceGame/resources/animations/dust.xml", IND_ALPHA, IND_16, 255, 0, 255)) return 0;
+	//IND_Animation *mAnimationDust = IND_Animation::newAnimation();
+	//if (!mI->_animationManager->addToSurface(mAnimationDust, "../SpaceGame/resources/animations/dust.xml", IND_ALPHA, IND_16, 255, 0, 255)) return 0;
 
 	// ----- Set the surface and animations into 2d entities -----
 
@@ -105,26 +105,68 @@ int IndieLib()
 	mPlayer2->setPosition(550, 380, 0);
 	//mPlayer2->setNumReplays(3);						// The animation will be displayed 3 times
 
-	hbr1->setPosition(195, 0, 100);
-	hbr2->setPosition(272, 0, 100);
-	hbb1->setPosition(537, 0, 100);
-	hbb2->setPosition(429, 0, 100);
+	hbr1->setPosition(190, 0, 100);
+	hbr2->setPosition(262, 0, 100);
+	hbb1->setPosition(542, 0, 100);
+	hbb2->setPosition(439, 0, 100);
 
 	// ----- Main Loop -----
 
+	float mAngle = 0;
+	float mPos = 140;
+	float mPos1 = 530;
+	int mSpeed = 200;
+	float mDelta;
+	char mText[2048];
+	mText[0] = 0;
+
 	while (!mI->_input->onKeyPress(IND_ESCAPE) && !mI->_input->quit())
 	{
+		// ----- Input update -----
+
 		mI->_input->update();
-		// Toogle full screen when pressing "space"
-		//if (mI->_input->onKeyPress(IND_SPACE)) mI->_render->toggleFullScreen();
+		mDelta = mI->_render->getFrameTime() / 1000.0f;
+
+		if (mI->_input->isKeyPressed(IND_D))
+		{
+			mPos += mSpeed * mDelta;
+		}
+
+		if (mI->_input->isKeyPressed(IND_A))
+		{
+			mPos -= mSpeed * mDelta;
+		}
+
+		if (mI->_input->isKeyPressed(IND_KEYRIGHT))
+		{
+			mPos1 += mSpeed * mDelta;
+		}
+
+		if (mI->_input->isKeyPressed(IND_KEYLEFT))
+		{
+			mPos1 -= mSpeed * mDelta;
+		}
+
+		mPlayer1->setPosition((float)mPos, 380, 0);
+		mPlayer2->setPosition((float)mPos1, 380, 0);
+
+
+		if (mPos >= mPos1)
+		{
+			mPlayer1->setMirrorX(0);
+			mPlayer2->setMirrorX(0);
+		}
+		else
+		{
+			mPlayer1->setMirrorX(1);
+			mPlayer2->setMirrorX(1);
+		}
+
 		mI->_render->beginScene();
 		mI->_entity2dManager->renderEntities2d();
 		mI->_render->endScene();
 	}
 
-	// ----- Free -----
-
 	mI->end();
-
 	return 0;
 }

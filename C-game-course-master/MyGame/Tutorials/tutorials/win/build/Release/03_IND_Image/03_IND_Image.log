@@ -1,0 +1,19 @@
+﻿Build started 01-Jun-16 22:33:13.
+     1>Project "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\basic\03_IND_Image\03_IND_Image.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Visual Studio 2\VC\bin\CL.exe /c /I..\..\..\..\common\include /nologo /W4 /WX- /O2 /Ob2 /Oi /Ot /Oy- /GL /D WIN32 /D NDEBUG /Gm- /EHa /MD /GS- /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/03_IND_Image\\" /Fd"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/03_IND_Image\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\basic\03_IND_Image\CIndieLib_vc2008.cpp ..\..\..\basic\03_IND_Image\Tutorial03.cpp ..\..\..\WorkingPath.cpp
+         CIndieLib_vc2008.cpp
+         Tutorial03.cpp
+         WorkingPath.cpp
+       Link:
+         C:\Program Files (x86)\Visual Studio 2\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\basic\03_IND_Image\/../../../../bin/win\03_IND_Image.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:../../../../bin/win IndieLib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\basic\03_IND_Image\/../../../../bin/win\03_IND_Image.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\basic\03_IND_Image\/../../../../bin/win\03_IND_Image.lib" /MACHINE:X86 /SAFESEH "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/03_IND_Image\CIndieLib_vc2008.obj"
+         "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/03_IND_Image\Tutorial03.obj"
+         "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/03_IND_Image\WorkingPath.obj"
+         Generating code
+         Finished generating code
+         03_IND_Image.vcxproj -> D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\basic\03_IND_Image\/../../../../bin/win\03_IND_Image.exe
+     1>Done Building Project "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\basic\03_IND_Image\03_IND_Image.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.89

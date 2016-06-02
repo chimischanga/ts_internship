@@ -1,0 +1,19 @@
+﻿Build started 01-Jun-16 22:33:33.
+     1>Project "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\advanced\02_Blitting_2d_Directly\Adv_02_Blitting_2d_Directly.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Visual Studio 2\VC\bin\CL.exe /c /I..\..\..\..\common\include /nologo /W4 /WX- /O2 /Ob2 /Oi /Ot /Oy- /GL /D WIN32 /D NDEBUG /Gm- /EHa /MD /GS- /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/Adv_02_Blitting_2d_Directly\\" /Fd"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/Adv_02_Blitting_2d_Directly\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\advanced\02_Blitting_2d_Directly\CIndieLib_vc2008.cpp ..\..\..\advanced\02_Blitting_2d_Directly\Tutorial02.cpp ..\..\..\WorkingPath.cpp
+         CIndieLib_vc2008.cpp
+         Tutorial02.cpp
+         WorkingPath.cpp
+       Link:
+         C:\Program Files (x86)\Visual Studio 2\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\advanced\02_Blitting_2d_Directly\/../../../../bin/win\Adv_02_Blitting_2d_Directly.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:../../../../bin/win IndieLib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\advanced\02_Blitting_2d_Directly\/../../../../bin/win\Adv_02_Blitting_2d_Directly.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\advanced\02_Blitting_2d_Directly\/../../../../bin/win\Adv_02_Blitting_2d_Directly.lib" /MACHINE:X86 /SAFESEH "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/Adv_02_Blitting_2d_Directly\CIndieLib_vc2008.obj"
+         "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/Adv_02_Blitting_2d_Directly\Tutorial02.obj"
+         "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\/build/Release/Adv_02_Blitting_2d_Directly\WorkingPath.obj"
+         Generating code
+         Finished generating code
+         Adv_02_Blitting_2d_Directly.vcxproj -> D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\advanced\02_Blitting_2d_Directly\/../../../../bin/win\Adv_02_Blitting_2d_Directly.exe
+     1>Done Building Project "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\Tutorials\tutorials\win\advanced\02_Blitting_2d_Directly\Adv_02_Blitting_2d_Directly.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.06
