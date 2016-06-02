@@ -1,4 +1,4 @@
-﻿Build started 02-Jun-16 21:33:26.
+﻿Build started 02-Jun-16 22:55:43.
      1>Project "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\SpaceGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Visual Studio 2\VC\bin\CL.exe /c /I"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\common\include" /I"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\tools\editor_tileless" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
@@ -11,8 +11,6 @@
      1>Main.cpp(157): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
      1>Main.cpp(160): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
      1>Main.cpp(163): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(208): warning C4553: '==' : operator has no effect; did you intend '='?
-     1>Main.cpp(209): warning C4553: '==' : operator has no effect; did you intend '='?
      1>Main.cpp(211): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
      1>Main.cpp(212): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
        Link:
@@ -26,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.49
+Time Elapsed 00:00:01.61

@@ -133,8 +133,8 @@ int IndieLib()
 	float mPosX1 = 530;
 	float mPosY = 380;
 	float mPosY1 = 380;
-	float mPosZ = 1;
-	float mPosZ1 = 1;
+	float mPosZ = 5;
+	float mPosZ1 = 5;
 	int mSpeed = 200;
 	float mDelta;
 	char mText[2048];
@@ -205,8 +205,8 @@ int IndieLib()
 			mPosY1 -= mSpeed * mDelta;
 		}
 
-		if (mPosY1 < mPosY) mPosZ == mPosZ++;
-		else if (mPosY1 > mPosY) mPosZ1 == mPosZ1++;
+		if (mPosY1 < mPosY) mPosZ1 = 10 && mPosZ == mPosZ++;
+		else if (mPosY1 > mPosY) mPosZ = 10 && mPosZ1 == mPosZ++;
 
 		mPlayer1->setPosition((float)mPosX, (float)mPosY, (float)mPosZ);
 		mPlayer2->setPosition((float)mPosX1, (float)mPosY1, (float)mPosZ1);
