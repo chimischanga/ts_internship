@@ -36,6 +36,11 @@ int IndieLib()
 	if (!mI->_surfaceManager->add(mSurfaceHBB1, "../SpaceGame/resources/hbb1.png", IND_ALPHA, IND_32)) return 0;
 	IND_Surface *mSurfaceHBB2 = IND_Surface::newSurface();
 	if (!mI->_surfaceManager->add(mSurfaceHBB2, "../SpaceGame/resources/hbb2.png", IND_ALPHA, IND_32)) return 0;
+	
+	IND_Surface *mRed = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(mRed, "../SpaceGame/resources/red.png", IND_ALPHA, IND_32)) return 0;
+	IND_Surface *mBlue = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(mBlue, "../SpaceGame/resources/blue.png", IND_ALPHA, IND_32)) return 0;
 
 
 	// ----- Animations loading -----
@@ -75,6 +80,14 @@ int IndieLib()
 	mI->_entity2dManager->add(hbb2);
 	hbb2->setSurface(mSurfaceHBB2);
 
+	IND_Entity2d *red = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(red);
+	red->setSurface(mRed);
+
+	IND_Entity2d *blue = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(blue);
+	blue->setSurface(mBlue);
+
 	// Character 1
 	IND_Entity2d *mPlayer1 = IND_Entity2d::newEntity2d();
 	mI->_entity2dManager->add(mPlayer1);					// Entity adding
@@ -110,48 +123,67 @@ int IndieLib()
 	hbb1->setPosition(542, 0, 100);
 	hbb2->setPosition(439, 0, 100);
 
+	blue->setPosition(0,275,300);
+	red->setPosition(470,275,300);
+
 	// ----- Main Loop -----
 
 	float mAngle = 0;
-	float mPos = 140;
-	float mPos1 = 530;
+	float mPosX = 140;
+	float mPosX1 = 530;
 	int mSpeed = 200;
 	float mDelta;
 	char mText[2048];
 	mText[0] = 0;
+
+	float mWidth = mPlayer1->getRegionWidth() / 2;
+	float mWidth1 = mPlayer2->getRegionWidth() / 2;
+
+	float mHeight = mPlayer1->getRegionHeight() / 2;
+	float mHeight1 = mPlayer2->getRegionHeight() / 2;
 
 	while (!mI->_input->onKeyPress(IND_ESCAPE) && !mI->_input->quit())
 	{
 		// ----- Input update -----
 
 		mI->_input->update();
+		if (mPosX + mWidth >= mI->_window->getWidth()-120) mPosX = mI->_window->getWidth()-120;
+		if (mPosX - mWidth < 5) mPosX = 5;
+
+		if (mPosX1 + mWidth >= mI->_window->getWidth()-145) mPosX1 = mI->_window->getWidth()-145;
+		if (mPosX1 - mWidth < -30) mPosX1 = -30;
+
+
+		//if (mPosY + mHeight >= mI->_window->getHeight()) mPosY = mI->_window->getHeight();
+		//if (mPosY - mHeight < 0) mPosY = 0;
+
 		mDelta = mI->_render->getFrameTime() / 1000.0f;
 
 		if (mI->_input->isKeyPressed(IND_D))
 		{
-			mPos += mSpeed * mDelta;
+			mPosX += mSpeed * mDelta;
 		}
 
 		if (mI->_input->isKeyPressed(IND_A))
 		{
-			mPos -= mSpeed * mDelta;
+			mPosX -= mSpeed * mDelta;
 		}
 
 		if (mI->_input->isKeyPressed(IND_KEYRIGHT))
 		{
-			mPos1 += mSpeed * mDelta;
+			mPosX1 += mSpeed * mDelta;
 		}
 
 		if (mI->_input->isKeyPressed(IND_KEYLEFT))
 		{
-			mPos1 -= mSpeed * mDelta;
+			mPosX1 -= mSpeed * mDelta;
 		}
 
-		mPlayer1->setPosition((float)mPos, 380, 0);
-		mPlayer2->setPosition((float)mPos1, 380, 0);
+		mPlayer1->setPosition((float)mPosX, 380, 0);
+		mPlayer2->setPosition((float)mPosX1, 380, 0);
 
 
-		if (mPos >= mPos1)
+		if (mPosX >= mPosX1)
 		{
 			mPlayer1->setMirrorX(0);
 			mPlayer2->setMirrorX(0);

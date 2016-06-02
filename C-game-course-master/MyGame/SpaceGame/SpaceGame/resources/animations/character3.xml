@@ -16,15 +16,15 @@
 	<!-- sequences declaration -->
 	<sequences>
 		<sequence name="rock_advance">
-			<frame name="Rock1" time="150" />
-			<frame name="Rock2" time="150" />
-			<frame name="Rock3" time="150" />
-			<frame name="Rock4" time="150" />
-			<frame name="Rock5" time="150" />
-			<frame name="Rock6" time="150" />
-			<frame name="Rock7" time="150" />
-			<frame name="Rock8" time="150" />
-			<frame name="Rock9" time="150" />
+			<frame name="Rock1" time="100" />
+			<frame name="Rock2" time="100" />
+			<frame name="Rock3" time="100" />
+			<frame name="Rock4" time="100" />
+			<frame name="Rock5" time="100" />
+			<frame name="Rock6" time="100" />
+			<frame name="Rock7" time="100" />
+			<frame name="Rock8" time="100" />
+			<frame name="Rock9" time="100" />
 		</sequence>			
 	</sequences>
 </animation>
