@@ -2,15 +2,15 @@
 <animation>
 	<!-- frames declaration -->
 	<frames>	
-		<frame name="Rock1" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_01.png" />
-		<frame name="Rock2" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_02.png" />
-		<frame name="Rock3" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_03.png" />
-		<frame name="Rock4" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_04.png" />
-		<frame name="Rock5" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_05.png" />
-		<frame name="Rock6" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_06.png" />
-		<frame name="Rock7" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_07.png" />
-		<frame name="Rock8" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_08.png" />
-		<frame name="Rock9" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_09.png" />	
+		<frame name="Rock1" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_01.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions1.xml"/>
+		<frame name="Rock2" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_02.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions2.xml"/>
+		<frame name="Rock3" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_03.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions3.xml"/>
+		<frame name="Rock4" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_04.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions4.xml"/>
+		<frame name="Rock5" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_05.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions5.xml"/>
+		<frame name="Rock6" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_06.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions6.xml"/>
+		<frame name="Rock7" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_07.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions7.xml"/>
+		<frame name="Rock8" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_08.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions8.xml"/>
+		<frame name="Rock9" file="../SpaceGame/resources/animations/advance2/Rock_Avanza_09.png" collision="../SpaceGame/resources/animations/advance2/pl2_collisions9.xml"/>	
 	</frames>
 		
 	<!-- sequences declaration -->

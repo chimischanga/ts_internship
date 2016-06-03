@@ -1,0 +1,6 @@
+<source lang="XML">
+<?xml version="1.0" encoding="utf-8"?>
+<bounding_areas>
+	<rectangle id="red" x="470" y="275" width="54" height="328" />
+</bounding_areas>
+</source>

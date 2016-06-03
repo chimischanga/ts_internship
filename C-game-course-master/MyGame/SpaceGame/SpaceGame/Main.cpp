@@ -12,6 +12,7 @@
 Main
 ==================
 */
+
 int IndieLib()
 {
 	
@@ -42,24 +43,13 @@ int IndieLib()
 	IND_Surface *mBlue = IND_Surface::newSurface();
 	if (!mI->_surfaceManager->add(mBlue, "../SpaceGame/resources/blue.png", IND_ALPHA, IND_32)) return 0;
 
-
-	// ----- Animations loading -----
-
-	// Characters animations, we apply a color key of (30, 59, 121)
 	IND_Animation *mAnimationCharacter1 = IND_Animation::newAnimation();
 	if (!mI->_animationManager->addToSurface(mAnimationCharacter1, "../SpaceGame/resources/animations/character1.xml", IND_ALPHA, IND_32, 30, 59, 121)) return 0;
-
-	// Characters animations, we apply a color key of (38, 62, 114)
 	IND_Animation *mAnimationCharacter2 = IND_Animation::newAnimation();
 	if (!mI->_animationManager->addToSurface(mAnimationCharacter2, "../SpaceGame/resources/animations/character3.xml", IND_ALPHA, IND_32, 28, 28, 28)) return 0;
 
-	// Dust animation, we apply a color key of (255, 0, 255)
-	//IND_Animation *mAnimationDust = IND_Animation::newAnimation();
-	//if (!mI->_animationManager->addToSurface(mAnimationDust, "../SpaceGame/resources/animations/dust.xml", IND_ALPHA, IND_16, 255, 0, 255)) return 0;
-
 	// ----- Set the surface and animations into 2d entities -----
 
-	// Creating 2d entity for the background
 	IND_Entity2d *mBack = IND_Entity2d::newEntity2d();
 	mI->_entity2dManager->add(mBack);					// Entity adding
 	mBack->setSurface(mSurfaceBack);					// Set the surface into the entity
@@ -91,40 +81,33 @@ int IndieLib()
 	// Character 1
 	IND_Entity2d *mPlayer1 = IND_Entity2d::newEntity2d();
 	mI->_entity2dManager->add(mPlayer1);					// Entity adding
-	mPlayer1->setAnimation(mAnimationCharacter1);				// Set the animation into the entity
+	mPlayer1->setAnimation(mAnimationCharacter1);			// Set the animation into the entity
 
 	// Character 2
 	IND_Entity2d *mPlayer2 = IND_Entity2d::newEntity2d();
 	mI->_entity2dManager->add(mPlayer2);					// Entity adding
-	mPlayer2->setAnimation(mAnimationCharacter2);				// Set the animation into the entity
-
-	// Dust explosion
-	//IND_Entity2d *mDust = IND_Entity2d::newEntity2d();
-	//mI->_entity2dManager->add(mDust);					// Entity adding
-	//mDust->setAnimation(mAnimationDust);					// Set the animation into the entity
+	mPlayer2->setAnimation(mAnimationCharacter2);			// Set the animation into the entity
 
 	// ----- Changing the attributes of the 2d entities -----
 
+	mBack->setPosition(0, 0, 0);
+
+	hbr1->setPosition(190, 0, 1);
+	hbr2->setPosition(262, 0, 1);
+	hbb1->setPosition(542, 0, 1);
+	hbb2->setPosition(439, 0, 1);
+
+	blue->setPosition(0, 275, 200);
+	blue->setBoundingRectangle("blue", 5, 0, 54, 328);
+	red->setPosition(470, 275, 200);
+	blue->setBoundingRectangle("red", 740, 0, 54, 328);
+
 	// Player 1
 	mPlayer1->setSequence(0);						// Choose sequence
-	mPlayer1->setPosition(140, 380, 0);
 	mPlayer1->setMirrorX(1);						// Horizontal mirroring
-
-	// Dust explosion
-	//mDust->setPosition(360, 250, 0);
 
 	// Player 2
 	mPlayer2->setSequence(0);						// Choose sequence
-	mPlayer2->setPosition(550, 380, 0);
-	//mPlayer2->setNumReplays(3);						// The animation will be displayed 3 times
-
-	hbr1->setPosition(190, 0, 100);
-	hbr2->setPosition(262, 0, 100);
-	hbb1->setPosition(542, 0, 100);
-	hbb2->setPosition(439, 0, 100);
-
-	blue->setPosition(0,275,300);
-	red->setPosition(470,275,300);
 
 	// ----- Main Loop -----
 
@@ -164,6 +147,7 @@ int IndieLib()
 		if (mPosY1 - mHeight < 355) mPosY1 = 355;
 
 		mDelta = mI->_render->getFrameTime() / 1000.0f;
+
 
 		if (mI->_input->isKeyPressed(IND_D))
 		{
@@ -205,12 +189,28 @@ int IndieLib()
 			mPosY1 -= mSpeed * mDelta;
 		}
 
-		if (mPosY1 < mPosY) mPosZ1 = 10 && mPosZ == mPosZ++;
-		else if (mPosY1 > mPosY) mPosZ = 10 && mPosZ1 == mPosZ++;
+		if (mPosY1 < mPosY) mPosZ1 = 5 && mPosZ == mPosZ++;
+		else if (mPosY1 > mPosY) mPosZ = 5 && mPosZ1 == mPosZ++;
 
 		mPlayer1->setPosition((float)mPosX, (float)mPosY, (float)mPosZ);
 		mPlayer2->setPosition((float)mPosX1, (float)mPosY1, (float)mPosZ1);
 
+		if (mI->_entity2dManager->isCollision(mPlayer1, "first", blue, "blue"))
+		{
+
+		}
+		if (mI->_entity2dManager->isCollision(mPlayer2, "second", blue, "blue"))
+		{
+
+		}
+		if (mI->_entity2dManager->isCollision(mPlayer1, "first", blue, "red"))
+		{
+
+		}
+		if (mI->_entity2dManager->isCollision(mPlayer1, "second", blue, "red"))
+		{
+
+		}
 
 		if (mPosX >= mPosX1)
 		{
@@ -223,8 +223,11 @@ int IndieLib()
 			mPlayer2->setMirrorX(1);
 		}
 
-		mI->_render->beginScene();
+
+		mI->_render->beginScene(); 
+		mI->_render->clearViewPort(0, 0, 0);
 		mI->_entity2dManager->renderEntities2d();
+		mI->_entity2dManager->renderCollisionAreas(255, 0, 0, 255);
 		mI->_render->endScene();
 	}
 

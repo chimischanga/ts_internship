@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_Installing", "basic\01_Installing\01_Installing.vcproj", "{47BF1F65-E6A9-4CD3-A7B0-E07F431BA628}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_IND_Surface", "basic\02_IND_Surface\02_IND_Surface.vcproj", "{15858124-F4BB-4D94-BFDA-D91597897C09}"
