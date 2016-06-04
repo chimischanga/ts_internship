@@ -44,6 +44,10 @@ int IndieLib()
 	if (!mI->_surfaceManager->add(mBlue, "../SpaceGame/resources/blue.png", IND_ALPHA, IND_32)) return 0;
 	IND_Surface *mEmpty = IND_Surface::newSurface();
 	if (!mI->_surfaceManager->add(mEmpty, "../SpaceGame/resources/desperate.png", IND_ALPHA, IND_32)) return 0;
+	IND_Surface *endBlue = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(endBlue, "../SpaceGame/resources/gameoverblue.jpg", IND_ALPHA, IND_32)) return 0;
+	IND_Surface *endRed = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(endRed, "../SpaceGame/resources/gameoverred.jpg", IND_ALPHA, IND_32)) return 0;
 
 	IND_Animation *mAnimationCharacter1 = IND_Animation::newAnimation();
 	if (!mI->_animationManager->addToSurface(mAnimationCharacter1, "../SpaceGame/resources/animations/character1.xml", IND_ALPHA, IND_32, 30, 59, 121)) return 0;
@@ -91,6 +95,10 @@ int IndieLib()
 	IND_Entity2d *empty = IND_Entity2d::newEntity2d();
 	mI->_entity2dManager->add(empty);
 	empty->setSurface(mEmpty);
+
+	/*IND_Entity2d *endingred = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(endingred);
+	endingred->setSurface(endRed);*/
 
 	IND_Entity2d *empty1 = IND_Entity2d::newEntity2d();
 	mI->_entity2dManager->add(empty1);
@@ -238,10 +246,13 @@ int IndieLib()
 			mI->_entity2dManager->remove(red);
 			mI->_entity2dManager->remove(blue1);
 			mI->_entity2dManager->remove(blue);
-		}
-		if (mI->_entity2dManager->isCollision(mPlayer1, "player1", red, "red"))
-		{
-			hbr2->setPosition(262, 0, 1);
+			mI->_entity2dManager->remove(hbb1);
+			mI->_entity2dManager->remove(hbb2);
+			mI->_entity2dManager->remove(hbr1);
+			mI->_entity2dManager->remove(hbr2);
+			IND_Entity2d *endingblue = IND_Entity2d::newEntity2d();
+			mI->_entity2dManager->add(endingblue);
+			endingblue->setSurface(endBlue);
 		}
 
 		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", red, "red"))
@@ -264,11 +275,15 @@ int IndieLib()
 			mI->_entity2dManager->remove(red);
 			mI->_entity2dManager->remove(blue1);
 			mI->_entity2dManager->remove(blue);
+			mI->_entity2dManager->remove(hbb1);
+			mI->_entity2dManager->remove(hbb2);
+			mI->_entity2dManager->remove(hbr1);
+			mI->_entity2dManager->remove(hbr2);
+			IND_Entity2d *endingred = IND_Entity2d::newEntity2d();
+			mI->_entity2dManager->add(endingred);
+			endingred->setSurface(endRed);
 		}
-		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", blue, "blue"))
-		{
-			hbb2->setPosition(439, 0, 1);
-		}
+
 
 		if (mPosX >= mPosX1)
 		{
@@ -285,7 +300,7 @@ int IndieLib()
 		mI->_render->beginScene(); 
 		mI->_render->clearViewPort(0, 0, 0);
 		mI->_entity2dManager->renderEntities2d();
-		mI->_entity2dManager->renderCollisionAreas(255, 0, 0, 255);
+		//mI->_entity2dManager->renderCollisionAreas(255, 0, 0, 255);
 		mI->_render->endScene();
 	}
 
