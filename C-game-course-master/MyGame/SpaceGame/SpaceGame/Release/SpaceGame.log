@@ -1,18 +1,19 @@
-﻿Build started 03-Jun-16 23:51:28.
+﻿Build started 04-Jun-16 13:28:38.
      1>Project "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\SpaceGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Visual Studio 2\VC\bin\CL.exe /c /I"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\common\include" /I"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\tools\editor_tileless" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
          Main.cpp
-     1>Main.cpp(126): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(127): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(129): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(130): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(137): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(140): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(143): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(146): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Main.cpp(195): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Main.cpp(196): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>Main.cpp(149): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(150): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(152): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(153): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(160): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(163): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(166): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(169): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Main.cpp(218): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>Main.cpp(219): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>Main.cpp(147): warning C4101: 'pShow' : unreferenced local variable
        Link:
          C:\Program Files (x86)\Visual Studio 2\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\Release\SpaceGame.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\common\include" /LIBPATH:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\bin\win" /LIBPATH:../../../../bin/win IndieLib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\Release\SpaceGame.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\Release\SpaceGame.lib" /MACHINE:X86 /SAFESEH Release\Main.obj
          Release\CIndieLib.obj
@@ -23,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.82
+Time Elapsed 00:00:01.65

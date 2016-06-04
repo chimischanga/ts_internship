@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bounding_areas>
-	<rectangle id="p21" x="-5" y="0" width="110" height="198" />
+	<rectangle id="player1" x="-5" y="0" width="110" height="198" />
 </bounding_areas>

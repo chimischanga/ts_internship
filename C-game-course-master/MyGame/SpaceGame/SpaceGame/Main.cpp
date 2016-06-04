@@ -42,6 +42,8 @@ int IndieLib()
 	if (!mI->_surfaceManager->add(mRed, "../SpaceGame/resources/red.png", IND_ALPHA, IND_32)) return 0;
 	IND_Surface *mBlue = IND_Surface::newSurface();
 	if (!mI->_surfaceManager->add(mBlue, "../SpaceGame/resources/blue.png", IND_ALPHA, IND_32)) return 0;
+	IND_Surface *mEmpty = IND_Surface::newSurface();
+	if (!mI->_surfaceManager->add(mEmpty, "../SpaceGame/resources/desperate.png", IND_ALPHA, IND_32)) return 0;
 
 	IND_Animation *mAnimationCharacter1 = IND_Animation::newAnimation();
 	if (!mI->_animationManager->addToSurface(mAnimationCharacter1, "../SpaceGame/resources/animations/character1.xml", IND_ALPHA, IND_32, 30, 59, 121)) return 0;
@@ -74,9 +76,25 @@ int IndieLib()
 	mI->_entity2dManager->add(red);
 	red->setSurface(mRed);
 
+	IND_Entity2d *red1 = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(red1);
+	red1->setSurface(mRed);
+
 	IND_Entity2d *blue = IND_Entity2d::newEntity2d();
 	mI->_entity2dManager->add(blue);
 	blue->setSurface(mBlue);
+
+	IND_Entity2d *blue1 = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(blue1);
+	blue1->setSurface(mBlue);
+
+	IND_Entity2d *empty = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(empty);
+	empty->setSurface(mEmpty);
+
+	IND_Entity2d *empty1 = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(empty1);
+	empty1->setSurface(mEmpty);
 
 	// Character 1
 	IND_Entity2d *mPlayer1 = IND_Entity2d::newEntity2d();
@@ -97,10 +115,14 @@ int IndieLib()
 	hbb1->setPosition(542, 0, 1);
 	hbb2->setPosition(439, 0, 1);
 
-	blue->setPosition(0, 275, 200);
+	blue->setPosition(0, 275, 5000);
 	blue->setBoundingRectangle("blue", 5, 0, 54, 328);
-	red->setPosition(470, 275, 200);
-	blue->setBoundingRectangle("red", 740, 0, 54, 328);
+	blue1->setPosition(-100, 275, 5000);
+	blue1->setBoundingRectangle("blue1", 5, 0, 54, 328);
+	red->setPosition(471, 275, 5000);
+	red->setBoundingRectangle("red", 270, 0, 54, 328);
+	red1->setPosition(800, 275, 5000);
+	red1->setBoundingRectangle("red1", 270, 0, 54, 328);
 
 	// Player 1
 	mPlayer1->setSequence(0);						// Choose sequence
@@ -122,6 +144,7 @@ int IndieLib()
 	float mDelta;
 	char mText[2048];
 	mText[0] = 0;
+	bool pShow;
 
 	float mWidth = mPlayer1->getRegionWidth() / 2;
 	float mWidth1 = mPlayer2->getRegionWidth() / 2;
@@ -195,21 +218,56 @@ int IndieLib()
 		mPlayer1->setPosition((float)mPosX, (float)mPosY, (float)mPosZ);
 		mPlayer2->setPosition((float)mPosX1, (float)mPosY1, (float)mPosZ1);
 
-		if (mI->_entity2dManager->isCollision(mPlayer1, "first", blue, "blue"))
+		if (mI->_entity2dManager->isCollision(mPlayer1, "player1", blue, "blue"))
 		{
-
+			hbr2->setPosition(262, 0, -1);
+			blue->setPosition(-100, 275, 5000);
+			empty->setPosition(100, 400, 5000);
+			empty->setBoundingRectangle("empty", 300, 20, 5, 475);
 		}
-		if (mI->_entity2dManager->isCollision(mPlayer2, "second", blue, "blue"))
+		if (mI->_entity2dManager->isCollision(mPlayer1, "player1", empty, "empty"))
 		{
-
+			blue1->setPosition(0, 275, 5000);
 		}
-		if (mI->_entity2dManager->isCollision(mPlayer1, "first", blue, "red"))
+		if (mI->_entity2dManager->isCollision(mPlayer1, "player1", blue1, "blue1"))
 		{
-
+			hbr1->setPosition(262, 0, -1);
+			mI->_entity2dManager->remove(mPlayer1);
+			mI->_entity2dManager->remove(mPlayer2);
+			mI->_entity2dManager->remove(red1);
+			mI->_entity2dManager->remove(red);
+			mI->_entity2dManager->remove(blue1);
+			mI->_entity2dManager->remove(blue);
 		}
-		if (mI->_entity2dManager->isCollision(mPlayer1, "second", blue, "red"))
+		if (mI->_entity2dManager->isCollision(mPlayer1, "player1", red, "red"))
 		{
+			hbr2->setPosition(262, 0, 1);
+		}
 
+		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", red, "red"))
+		{
+			hbb2->setPosition(439, 0, -1);
+			red->setPosition(800, 275, 5000);
+			empty1->setPosition(100, 400, 5000);
+			empty1->setBoundingRectangle("empty1", 300, 20, 5, 475);
+		}
+		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", empty1, "empty1"))
+		{
+			red1->setPosition(471, 275, 5000);
+		}
+		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", red1, "red1"))
+		{
+			hbb1->setPosition(542, 0, -1);
+			mI->_entity2dManager->remove(mPlayer1);
+			mI->_entity2dManager->remove(mPlayer2);
+			mI->_entity2dManager->remove(red1);
+			mI->_entity2dManager->remove(red);
+			mI->_entity2dManager->remove(blue1);
+			mI->_entity2dManager->remove(blue);
+		}
+		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", blue, "blue"))
+		{
+			hbb2->setPosition(439, 0, 1);
 		}
 
 		if (mPosX >= mPosX1)
