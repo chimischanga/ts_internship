@@ -1,4 +1,4 @@
-﻿Build started 04-Jun-16 14:09:57.
+﻿Build started 04-Jun-16 14:33:35.
      1>Project "D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\SpaceGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Visual Studio 2\VC\bin\CL.exe /c /I"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\common\include" /I"D:\My Stuff\Studying\GameDev\GameDev\ts_internship\C-game-course-master\MyGame\SpaceGame\SpaceGame\tools\editor_tileless" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
@@ -24,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.63
+Time Elapsed 00:00:01.73

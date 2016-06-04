@@ -254,6 +254,13 @@ int IndieLib()
 			mI->_entity2dManager->add(endingblue);
 			endingblue->setSurface(endBlue);
 		}
+		if (mI->_entity2dManager->isCollision(mPlayer1, "player1", red, "red"))
+		{
+			blue1->setPosition(-100, 275, 5000);
+			blue->setPosition(0, 275, 5000);
+			empty->setPosition(-900, 0, 0);
+			hbr2->setPosition(262, 0, 1);
+		}
 
 		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", red, "red"))
 		{
@@ -284,6 +291,13 @@ int IndieLib()
 			endingred->setSurface(endRed);
 		}
 
+		if (mI->_entity2dManager->isCollision(mPlayer2, "player2", blue, "blue"))
+		{
+			red1->setPosition(1900, 275, 5000);
+			red->setPosition(471, 275, 5000);
+			empty1->setPosition(1900, 0, 0);
+			hbb2->setPosition(439, 0, 1);
+		}
 
 		if (mPosX >= mPosX1)
 		{
