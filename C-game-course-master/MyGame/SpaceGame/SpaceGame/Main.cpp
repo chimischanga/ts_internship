@@ -6,6 +6,7 @@
 #include "IND_Surface.h"
 #include "IND_Entity2d.h"
 #include "IND_Animation.h"
+#include "IND_Font.h"
 
 /*
 ==================
@@ -309,11 +310,13 @@ int IndieLib()
 			mPlayer1->setMirrorX(1);
 			mPlayer2->setMirrorX(1);
 		}
-
-
+		
+		//float fps = 1 / mDelta;
+		
 		mI->_render->beginScene(); 
 		mI->_render->clearViewPort(0, 0, 0);
 		mI->_entity2dManager->renderEntities2d();
+		mI->_render->showFpsInWindowTitle();
 		//mI->_entity2dManager->renderCollisionAreas(255, 0, 0, 255);
 		mI->_render->endScene();
 	}
